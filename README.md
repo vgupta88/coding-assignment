@@ -16,7 +16,12 @@ This API is a microservice created as part of a technical assessment to calculat
 ## Code & Tests Coverage
 The API comes with JaCoCo plugin to use with Sonar integration that enables it to cover code as well as tests via a valid SonarQube installation. 
 
-## Setting it up
+### Setting it up
+
+#### Running tests
+```sh
+$ mvn clean test
+```
 #### Local Sonar Environment
 ```sh
 $ mvn clean install sonar:sonar
@@ -60,3 +65,14 @@ http://localhost:8080/assess/discount
 "billId": "c8305f5e-1cf4-4938-b577-3fbac5fea5a1"
 }
 ```
+
+## TODO 
+- Improve coverage
+- Validations
+- Database support for user management (so we don't need to pass user object in request)
+- Service and DAO Layer
+
+## CI/CD Plan
+- Containerize using Docker
+- CI using Jenkins to build docker image
+- CD Pipeline using container management solution like AWS ECS to deploy the image and manage container
